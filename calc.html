@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="calc.js"></script>
+        <script src="graph.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="Header"></div>
+            <div class="Footer"></div>
+            <div class="Calculator">
+                <div id="display" class="Display">
+                    <div id="currentNumber" class="CurrentNumber"></div>
+                    <div id="storedNumber" class="StoredNumber"></div>
+                </div>
+                <div class="Buttons">
+                    <!-- Add Mode Switch and AC at the top -->
+                    <div class="Button Special" onclick="switchMode()">Graph</div>
+                    <div class="Button Special" onclick="clearDisplay()">AC</div>
+                    <div class="Button Special"></div>
+                    <div class="Button Special"></div>
+                    
+                    <!-- First Row -->
+                    <div class="Button" onclick="show(7)">7</div>
+                    <div class="Button" onclick="show(8)">8</div>
+                    <div class="Button" onclick="show(9)">9</div>
+                    <div class="Button" onclick="show('/')">/</div>
+                    
+                    <!-- Second Row -->
+                    <div class="Button" onclick="show(4)">4</div>
+                    <div class="Button" onclick="show(5)">5</div>
+                    <div class="Button" onclick="show(6)">6</div>
+                    <div class="Button" onclick="show('*')">*</div>
+                    
+                    <!-- Third Row -->
+                    <div class="Button" onclick="show(1)">1</div>
+                    <div class="Button" onclick="show(2)">2</div>
+                    <div class="Button" onclick="show(3)">3</div>
+                    <div class="Button" onclick="show('-')">-</div>
+                    
+                    <!-- Fourth Row -->
+                    <div class="Button" onclick="show(0)">0</div>
+                    <div class="Button" onclick="show('.')">.</div>
+                    <div class="Button" onclick="solve()">=</div>
+                    <div class="Button" onclick="show('+')">+</div>
+                </div>
+            </div>
+            <div class="GraphCalc" id="graphCalc">
+                <div class="GraphHeader">
+                    <h3>Graphing Calculator</h3>
+                    <div class="Button Special" onclick="switchMode()">Calculator</div>
+                </div>
+                <div style="width: 600px; height: 400px;">
+                    <canvas id="graphCanvas" style="width: 100%; height: 400px; position: relative;"></canvas>
+                </div>
+                <div class="GraphControls">
+                    <input type="text" id="function" placeholder="Enter function (e.g. x^2)">
+                    <button onclick="decodeFunction()">Plot</button>
+                    
+                    <!-- Math Function Buttons -->
+                    <div class="MathButtons">
+                        <!-- Trig Functions -->
+                        <div class="Button MathFunc" onclick="insertMath('sin()')">sin</div>
+                        <div class="Button MathFunc" onclick="insertMath('cos()')">cos</div>
+                        <div class="Button MathFunc" onclick="insertMath('tan()')">tan</div>
+                        
+                        <!-- Constants -->
+                        <div class="Button MathFunc" onclick="insertMath('π')">π</div>
+                        <div class="Button MathFunc" onclick="insertMath('e^()')">e</div>
+                        
+                        <!-- Roots -->
+                        <div class="Button MathFunc" onclick="insertMath('√()')">√</div>
+                        <div class="Button MathFunc" onclick="insertMath('n√()')"><code>x<sup>1/n</sup></code></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tipps">
+                <h3>Calculator Tips</h3>
+                <hr>
+                <h4>Basic Operations:</h4>
+                <ul>
+                    <li>Addition: <code>+</code></li>
+                    <li>Subtraction: <code>-</code></li>
+                    <li>Multiplication: <code>*</code></li>
+                    <li>Division: <code>/</code></li>
+                    <li>Power: <code>**</code> (not ^)</li>
+                </ul>
+                <h4>Examples:</h4>
+                <ul>
+                    <li>Square: <code>x**2</code></li>
+                    <li>Cube: <code>x**3</code></li>
+                    <li>Double: <code>2*x</code></li>
+                    <li>Half: <code>x/2</code></li>
+                </ul>
+                <p><strong>Note:</strong> Use parentheses for grouping: <code>(x+1)**2</code></p>
+            </div>
+          </div>
+    </body>
+</html>
