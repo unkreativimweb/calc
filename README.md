@@ -36,7 +36,7 @@ A sleek, modern calculator that combines standard arithmetic operations with pow
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/calculator.git
+git clone https://github.com/unkreativimweb/calc.git
 ```
 
 2. Install dependencies:
