@@ -1,3 +1,5 @@
+> readme ist obvi KI generiert wow toll super
+
 # 🧮 Advanced Calculator with Graphing Capabilities
 
 A sleek, modern calculator that combines standard arithmetic operations with powerful graphing functionality. Built with JavaScript, Chart.js, and CSS Grid.
